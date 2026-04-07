@@ -52,6 +52,8 @@ const Home = () => {
     { number: '4.9', label: 'Average Rating', icon: '🏆' }
   ];
 
+  // Note: statsSection is ready to be used when needed
+  /*
   const statsSection = (
     <div className="stats-section">
       <div className="stats-grid">
@@ -65,6 +67,7 @@ const Home = () => {
       </div>
     </div>
   );
+  */
 
   const handleChange = (e) => {
     setFormData({
