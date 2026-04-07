@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import Card from '../components/Card';
 import Button from '../components/Button';
 import Testimonials from '../components/Testimonials';
@@ -52,23 +51,6 @@ const Home = () => {
     { number: '4.9', label: 'Average Rating', icon: '🏆' }
   ];
 
-  // Note: statsSection is ready to be used when needed
-  /*
-  const statsSection = (
-    <div className="stats-section">
-      <div className="stats-grid">
-        {stats.map((stat, index) => (
-          <div key={index} className="stat-item">
-            <div className="stat-icon">{stat.icon}</div>
-            <div className="stat-number">{stat.number}</div>
-            <div className="stat-label">{stat.label}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-  */
-
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -107,10 +89,10 @@ const Home = () => {
                 with personalized care that addresses not just your symptoms, but your whole well-being.
               </p>
               <div className="hero-actions fade-in">
-                <Button to="/contact" size="large" variant="primary">
+                <Button onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})} size="large" variant="primary">
                   Book an Appointment
                 </Button>
-                <Button to="/about" size="large" variant="outline">
+                <Button onClick={() => document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})} size="large" variant="outline">
                   Our Services
                 </Button>
               </div>
@@ -157,7 +139,7 @@ const Home = () => {
               we're here to support you every step of the way with compassionate care that treats you as a whole person.
             </p>
             <div className="intro-cta">
-              <Button to="/about" variant="primary" size="large">
+              <Button onClick={() => document.getElementById('about')?.scrollIntoView({behavior: 'smooth'})} variant="primary" size="large">
                 Learn About Our Approach
               </Button>
             </div>
@@ -290,14 +272,14 @@ const Home = () => {
                 <div className="service-icon">{service.icon}</div>
                 <h3 className="service-title">{service.title}</h3>
                 <p className="service-description">{service.description}</p>
-                <Link to="/services" className="service-link">
+                <button onClick={() => document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})} className="service-link">
                   Learn More
-                </Link>
+                </button>
               </Card>
             ))}
           </div>
           <div className="services-cta">
-            <Button to="/services" variant="secondary" size="large">
+            <Button onClick={() => document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})} variant="secondary" size="large">
               View All Services
             </Button>
           </div>
@@ -330,10 +312,10 @@ const Home = () => {
               Take the first step towards a pain-free, active life. Schedule your consultation today.
             </p>
             <div className="cta-actions">
-              <Button to="/contact" variant="primary" size="large">
+              <Button onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})} variant="primary" size="large">
                 Book Appointment
               </Button>
-              <Button to="/about" variant="secondary" size="large">
+              <Button onClick={() => document.getElementById('about')?.scrollIntoView({behavior: 'smooth'})} variant="secondary" size="large">
                 Meet Our Team
               </Button>
             </div>
